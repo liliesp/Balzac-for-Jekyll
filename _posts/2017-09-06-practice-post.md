@@ -1,11 +1,9 @@
 ---
 layout: post-light-feature
-title: Test Post
-description: "Portland in shoreditch Vice, labore typewriter pariatur hoodie fap sartorial Austin. Pinterest literally occupy Schlitz forage."
+title: Practice Post
+description: "test post for day one of class"
 categories: articles
-date: 2013-08-17
-image: 
-        feature: soft-trees.jpg
+date: 2017-09-06
 ---
 Shoreditch bicycle rights anim, flexitarian laboris put a bird on it vinyl cupidatat narwhal. Hashtag artisan skateboard, flannel Bushwick nesciunt salvia aute fixie do plaid post-ironic dolor McSweeney's. Cliche pour-over chambray nulla four loko skateboard sapiente hashtag.
 
