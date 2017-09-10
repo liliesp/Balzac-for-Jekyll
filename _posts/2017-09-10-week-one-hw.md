@@ -6,19 +6,19 @@ categories: responses, impossiblemaps
 date: 2017-09-10
 ---
 
-####comparing bodies and maps-- systems which interact and intertwine
+#### comparing bodies and maps-- systems which interact and intertwine
 can maps, web maps specifically, dance? act?
 instead of cells, maps have data
 styles, tiles, servers
 
-#####types of maps
+##### types of maps
 * digital map: computer but not internet
 * web map is a subtype type of digital map
 * paper maps and atlases are very different
 * also differentiates mobile maps
 * google earth is a digital _globe_, not a map
 
-#####history of web maps 
+##### history of web maps 
 * ArcGIS
 * 1996 -- MapQuest
   * MapQuest sucked for several reasons: full page refresh to scroll or zoom, aligned to tile boundaries
@@ -38,7 +38,7 @@ filetypes used: KML or GeoJSON
 * alternative to raster tiles: vector tiles which render to rasters
 * D3
 
-####Google Maps vs Apple Maps
+#### Google Maps vs Apple Maps
 
 1 billion google maps users?! so big
 
