@@ -2,9 +2,12 @@
 layout: post-light-feature
 title: Week One HW
 description: "notes on readings and response"
-categories: responses, impossiblemaps
+tags: [responses, impossiblemaps]
 date: 2017-09-10
 ---
+
+### REFLECTION
+
 I think for some intents and purposes, the styling differences between Apple and Google Maps do matter from a user perspective. I know I personally prefer to use Google Maps because I rely on public transportation at home, and Google Maps:
 
 1. Labels public transportation
@@ -22,6 +25,8 @@ I'm thinking a lot about the part of the slideshow that compares bodies to maps 
 If maps are a projection (of 3D space, or even more if you include data being represented as another dimension) on 2D space (a screen in the case of web maps, conceptually any flat surface), then when you think of them in the more traditional sense they are less like bodies in that they can't react or change to stimuli-- the space can, but then you have to change the map. I guess I'm just grappling with the concept of a map as a body in the sense that we use our bodies, as individuals. Thinking about it in those terms is making me want to use that comparison to influence *how* I choose to represent data and space, and *why* I make my representational choices. It also invokes a sense of movement and emotion, and temporal recording. 
 
 Following in that vein, the desire for and reach towards the universal map is kind of an interesting situation-- the universal map is probably the most impossible map of them all. I guess that doesn't mean that commercially, there might be a map that becomes the one standard, but the reason Apple and Google co-exsist is that they fill different needs and are accessible in slightly different ways.
+
+### NOTES ON READINGS 
 
 #### comparing bodies and maps-- systems which interact and intertwine
 if maps are, as a 2D representation of 3D space, are like bodies, can maps, web maps specifically, dance? act? interesting when thinking of web maps vs traditional maps and having larger systems of the body that are for something rather than 
