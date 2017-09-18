@@ -13,7 +13,7 @@ I started thinking about how I'm unfamiliar with the geography of my family hist
 
 {% highlight html linenos %}
 <figure>
-	<img src="/images/image-filename-1.jpg">
-	<figcaption>Caption describing these two images.</figcaption>
+	<img src="/images/webmap1.png">
+	<figcaption> I used the watercolor stamen map tiles and added a popup that explains the circle as well. </figcaption>
 </figure>
 {% endhighlight %}
