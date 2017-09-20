@@ -1,0 +1,49 @@
+<!--  A basic web map. -->
+<!DOCTYPE html>
+<!-- Leaflet Guide: http://leafletjs.com/examples/quick-start.html -->
+<html lang="en">
+<!-- Head has title, stylesheets, etc, stuff that's being loaded -->
+<head>
+    <style type="text/css">
+    body { 
+    	margin: 0;
+    	padding: 0;
+	}
+	html,
+	#map {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width:100%;
+	}
+    </style>
+
+    <title> Impossible Maps Week II </title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+</head>
+<!--actual webpage content -->
+<body>
+	<div id="map"> </div> <!-- this is saying where our map is -->
+
+    <script>
+
+    //this is where we'll write javascript
+    var map = L.map('map').setView([53.9072037,14.2425399],10);
+    L.tileLayer('http://tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
+    	maxZoom: 18,
+    	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.',
+    }).addTo(map);
+    var marker = L.marker([53.9072037,14.2425399]).addTo(map);
+    marker.bindPopup("This is the part of Poland my mom is from!").openPopup();
+    var circle = L.circle([53.9072037,14.2425399], {
+    color: '#a0c4ff',
+    fillColor: '#c1d8ff',
+    fillOpacity: 0.4,
+    radius: 1931,
+}).addTo(map);
+	circle.bindPopup("Her favorite thing about her childhood is that she lived a little over a mile away from the beach to the north-- she likes to talk about riding her bike there with her friends and spending all day by the ocean.");
+    </script>
+</body>
+
+</html>
