@@ -1,0 +1,116 @@
+<!-- An extended example for this: https://www.mapbox.com/help/show-changes-over-time/ -->
+
+<!-- We want people to be able to see where earthquakes have occurred, and what the relative magnitudes were  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+	<style> 
+	@import url('https://fonts.googleapis.com/css?family=Quicksand');;
+	body {  margin: 0; padding: 0;  ; }
+	html,
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+	.map-overlay {
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    background: rgba(0, 0, 0, 0.8);
+	    margin-left: 20px;
+	    font-family: 'Quicksand', sans-serif;
+	    overflow: auto;
+	    border-radius: 3px;
+	}
+	#features {
+	    top: 0;
+	    height: 130px;
+	    margin-top: 20px;
+	    width: 350px;
+	}
+    #title {
+        font-size:18px;
+    }
+	h2, p, select {
+	    color: white;
+        font-size: 12px;
+	    margin: 8px;
+        text-align: center;
+	}
+    select {
+        background-color: black;
+    }
+	</style>
+
+
+<title> Skunk Map! </title>
+ <script src='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.js'></script>
+ <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+    <div id="map" class ="mapboxgl-map"></div>
+    <div class="map-overlay" id="features">
+    <h2 id="title"> BENNINGTON SKUNK SPOTTINGS </h2>
+    <p> skunk markers on map show places where the college community has seen skunks. Toggle drop-down menu to change the data display! </p>
+    <select id="popupDisp">
+      <option value="des">Description of Sighting</option>
+      <option value="time">Time spotted</option>
+    </select>
+</div>
+   
+
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGlsaWVzcCIsImEiOiJjajd0MzA2eHExanZmMzJvMzd6bHU2b3duIn0.VjIWetWJqz8xXwrjYKQehQ';
+    
+    var map = new mapboxgl.Map({
+        container: 'map', // you need this
+        style: 'mapbox://styles/liliesp/cj8tl24rndfox2sr886evx8nx', // you need this
+        center: [-73.238075,42.921335], // [long, lat] 
+        zoom: 15.32
+    });
+
+    //everything w data should be in on load fucntion
+    map.on('load', function(){
+    	map.loadImage('skunk.png', function(error, image) {
+        if (error) throw error;
+        map.addImage('skunk', image);
+        map.addLayer({
+            id: 'skunks',
+            type: 'symbol',
+            source: {
+                type: 'geojson',
+                data: 'skunksightings.geojson'
+            },
+            layout: { 
+	            'icon-image': 'skunk',
+	            "icon-size": 0.065
+            }
+        })
+    })
+});
+//lets instantiate a popup
+let popupEl = document.querySelector('#popupDisp');
+var popup = new mapboxgl.Popup({
+    closeButton:false,
+    closeOnClick:true,
+});
+map.on('mouseenter', 'skunks', function(e){
+    map.getCanvas().style.cursor = 'pointer';
+    if (popupEl.value == "des") {
+        popup.setLngLat(e.features[0].geometry.coordinates)
+        .setHTML(e.features[0].properties.description).addTo(map);  
+    } else {
+        popup.setLngLat(e.features[0].geometry.coordinates)
+        .setHTML("spotted " + e.features[0].properties.date + " at " + e.features[0].properties.time).addTo(map);  
+    }
+
+});
+map.on('click', 'skunks', function(e){
+    map.flyTo({center: e.features[0].geometry.coordinates});
+});
+
+    </script>
+</body>
+
+</html>
